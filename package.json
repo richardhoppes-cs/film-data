@@ -1,0 +1,23 @@
+{
+  "name": "film-data",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "start": "tsc && node dist/index.js",
+    "start-docker": "docker build -t film-data . && docker run -p 127.0.0.1:3000:3000 film-data"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@types/node": "^22.10.1",
+    "nodemon": "^3.1.7",
+    "typescript": "^5.7.2"
+  },
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}
