@@ -5,6 +5,10 @@
     "target": "ES2020",
     "sourceMap": true,
     "outDir": "dist",
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "strict": true, 
+    "skipLibCheck": true // testing this out (fingers crossed)
   },
   "include": ["src/**/*"],
 }

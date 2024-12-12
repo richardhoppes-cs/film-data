@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
+    environment:
+      - DATABASE_URL=postgres://filmdata:filmdata@db:5432/filmdata
+
+  db:
+    image: postgres:latest
+    container_name: filmdata-db
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: filmdata
+      POSTGRES_PASSWORD: filmdata
+      POSTGRES_DB: filmdata
+    volumes:
+      - db-data:/var/lib/postgresql/data
+
+volumes:
+  db-data:
